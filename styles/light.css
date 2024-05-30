@@ -9,4 +9,25 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --accent-color: #ff8dcb;
+  --accent-color-hover: rgba(50, 49, 45, 0.4);
+  --background-color: #fff1f7;
+  --background-img: url(../images/cover-image-light.png);
+  --text-color: #353430;
+  --text-pink-color: #db00ff;
+  --text-dark-color: var(--text-color);
+  --text-accent-color: var(--text-color);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-color: #ff8dcb;
+    --accent-color-hover: rgba(50, 49, 45, 0.4);
+    --background-color: #fff1f7;
+    --background-img: url(../images/cover-image-light.png);
+    --text-color: #353430;
+    --text-pink-color: #db00ff;
+    --text-dark-color: var(--text-color);
+    --text-accent-color: var(--text-color);
+    }
 }

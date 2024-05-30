@@ -1,5 +1,236 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  color: var(--text-color);
+  font-family: var(--font-family), sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: var(--line-height);
+  background-color: var(--background-color);
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  position: relative;
+  display: grid;
+  padding: var(--page-padding);
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  top: var(--page-padding);
+  right: var(--page-padding);
+  border-inline-end: 1px solid var(--accent-color);
+  border-block-start: 1px solid var(--accent-color);
+  inline-size: 25px;
+  aspect-ratio: 1/1;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  bottom: var(--page-padding);
+  left: var(--page-padding);
+  border-inline-start: 1px solid var(--accent-color);
+  border-block-end:  1px solid var(--accent-color);
+  inline-size: 25px;
+  aspect-ratio: 1/1;
+}
+
+.header__theme-menu {
+  z-index: 1;
+  justify-self: center;
+  margin-block-end: 273px;
+}
+
+.header__theme-menu-list{
+  display: flex;
+  gap: 10px;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-button {
+  line-height: 18px;
+  text-transform: lowercase;
+  min-inline-size: 70px;
+  min-block-size: 26px;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--accent-color-hover);
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__decorated-rec::before {
+  content: "REC";
+  position: absolute;
+  top: var(--page-padding);
+  right: calc(var(--page-padding) + 28px);
+  color: var(--accent-color);
+  text-transform: uppercase;
+}
+
+.header__decorated-rec::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--page-padding) + 8px);
+  right: calc(var(--page-padding) + 9px);
+  border-radius: 50%;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
+  inline-size: 9px;
+  aspect-ratio: 1/1;
+}
+
+.title {
+  color: var(--text-pink-color);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 82.5%;
+}
+
+.header__title {
+  justify-self: flex-start;
+  margin-inline-start: calc(0px - var(--page-padding));
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.title-decor{
+  color: var(--text-dark-color);
+  font-weight: 700;
+  word-wrap: normal;
+  background-color: var(--accent-color);
+}
+
+.card .title-decor {
+  margin-block-end: 10px;
+}
+
+
+.header__text {
+  justify-self: flex-end;
+  margin: 114px 0 calc(134px - var(--page-padding));
+  max-inline-size: var(--inline-size-header__text);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-gap);
+  margin: var(--content-block-margin) 0;
+  padding: 0 var(--page-padding);
+}
+
+.concentration-why, 
+.concentration-how {
+  display: grid;
+  grid-template-columns: 1fr minmax(472px, 649px);
+  gap: var(--section-gap);
+}
+
+.section-title {
+  color: var(--accent-color);
+  font-size: 18px;
+}
+
+.concentration-why__box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.link {
+  text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.link:hover {
+  border-bottom: 1px solid var(--text-color);
+}
+
+.link:focus-visible {
+  outline: 1px solid var(--text-color);
+}
+
+.concentration-what__title {
+  margin-block-end: var(--section-gap);
+  word-wrap: normal;
+  inline-size: calc((1024px - (var(--page-padding) * 2)) / 3);
+}
+
+.concentration-what__box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--section-gap);
+}
+
+.concentration-how__box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+}
+
+.gallery__head {
+  margin-block-end: 20px;
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-areas: 
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
+  gap: var(--section-gap);
+  max-block-size: 1048px;
+    
+}
+
+.gallery__img {
+  object-fit: cover;
+  inline-size: 100%;
+  block-size: 100%;
+}
+
+.gallery__img-sunset {
+  grid-area: sunset;
+}
+
+.gallery__img-ice-cream{
+  grid-area: ice-cream;
+}
+
+.gallery__img-tape {
+  grid-area: tape;
+}
+
+.gallery__img-books {
+  grid-area: books;
+}
+
+.gallery__img-street {
+  grid-area: street;
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-block-size: var(--block-size-footer);
+}
+
+.footer__title {
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
