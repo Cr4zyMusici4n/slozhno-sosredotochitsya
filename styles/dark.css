@@ -19,6 +19,7 @@
   --text-accent-color: var(--accent-color);
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --accent-color: #ff0070;

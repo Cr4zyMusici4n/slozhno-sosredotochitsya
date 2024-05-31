@@ -182,6 +182,10 @@
   gap: var(--section-gap);
 }
 
+.text-regular {
+  font-weight: 400;
+}
+
 .gallery__head {
   margin-block-end: 20px;
 }
