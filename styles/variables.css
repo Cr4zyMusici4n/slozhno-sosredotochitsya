@@ -16,9 +16,9 @@
   --line-height: 23.4px;
 
   --page-padding: 20px;
-  --inline-size-header__text: 491px;
   --block-size-footer: 768px;
   --content-gap: 80px;
   --content-block-margin: 60px;
   --section-gap: 20px;
+  --inline-size-column: 315px;
 }

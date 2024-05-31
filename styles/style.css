@@ -123,7 +123,7 @@
 .header__text {
   justify-self: flex-end;
   margin: 114px 0 calc(134px - var(--page-padding));
-  max-inline-size: var(--inline-size-header__text);
+  max-inline-size: 491px;
 }
 
 .content {
@@ -137,7 +137,7 @@
 .concentration-why, 
 .concentration-how {
   display: grid;
-  grid-template-columns: 1fr minmax(472px, 649px);
+  grid-template-columns: var(--inline-size-column) 1fr;
   gap: var(--section-gap);
 }
 
@@ -167,7 +167,7 @@
 .concentration-what__title {
   margin-block-end: var(--section-gap);
   word-wrap: normal;
-  inline-size: calc((1024px - (var(--page-padding) * 2)) / 3);
+  inline-size: var(--inline-size-column);
 }
 
 .concentration-what__box {
@@ -237,4 +237,29 @@
 
 .footer__title {
   text-shadow: 2px 2px 0 var(--accent-color);
+}
+
+@media (768px >= width > 668px) {
+  :root {
+    --block-size-footer: 1024px;
+    --inline-size-column: 236px;
+  }
+  
+  .header__theme-menu {
+    justify-self: flex-end;
+    margin: calc(192px - var(--page-padding)) 0 173px;
+  }
+
+  .header__theme-menu-list{
+    flex-direction: column;
+  }
+
+  .header__text {
+    margin: 163px 0 calc(183px - var(--page-padding));
+    max-inline-size: 364px;
+  }
+
+  .concentration-what__box {
+    grid-template-columns: 1fr;
+  }
 }
