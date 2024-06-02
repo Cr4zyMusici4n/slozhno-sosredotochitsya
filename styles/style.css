@@ -16,10 +16,11 @@
 
 .header {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
   padding: var(--page-padding);
   block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .decorated-zone::before {
@@ -46,8 +47,8 @@
 
 .header__theme-menu {
   z-index: 1;
-  align-self: center;
-  margin-block-end: 273px;
+  justify-self: center;
+  align-self: start;
 }
 
 .header__theme-menu-list {
@@ -77,6 +78,12 @@
   pointer-events: none;
 }
 
+.header__decorated-rec {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .header__decorated-rec::before {
   content: "REC";
   position: absolute;
@@ -99,6 +106,7 @@
 }
 
 .title {
+  align-self: center;
   color: var(--text-pink-color);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 82.5%;
@@ -116,13 +124,9 @@
   background-color: var(--accent-color);
 }
 
-.card .title-decor {
-  margin-block-end: 10px;
-}
-
 .header__text {
-  align-self: flex-end;
-  margin-block-start: 114px;
+  justify-self: flex-end;
+  align-self: center;
   max-inline-size: 491px;
 }
 
@@ -134,22 +138,28 @@
   padding: 0 var(--page-padding);
 }
 
-.concentration-why, 
-.concentration-how {
+.concentration {
   display: grid;
-  grid-template-columns: var(--inline-size-column) 1fr;
+  grid-template-columns: 315px 1fr;
   gap: var(--section-gap);
 }
 
-.section-title {
-  color: var(--accent-color);
+.concentration__title {
   font-size: 18px;
+  font-weight: 700;
 }
 
-.concentration-why__box {
-  display: flex;
-  flex-direction: column;
+.concentration__items {
+  display: grid;
   gap: var(--section-gap);
+}
+
+.concentration-item__head {
+  margin-block-end: 10px;
+}
+
+.concentration-item__body:not(:last-child) {
+  margin-block-end: 10px;
 }
 
 .link {
@@ -160,33 +170,38 @@
   border-bottom: 1px solid var(--text-color);
 }
 
+.link:focus {
+  outline: none;
+}
+
 .link:focus-visible {
   outline: 1px solid var(--text-color);
 }
 
-.concentration-what__title {
-  margin-block-end: var(--section-gap);
-  word-wrap: normal;
-  inline-size: var(--inline-size-column);
+.concentration_item-cols {
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.concentration-what__box {
+.concentration_item-cols .concentration__box {
+  grid-column: span 3;
+}
+
+.concentration_item-cols .concentration__items {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: var(--section-gap);
+  grid-template-columns: repeat(3, 1fr);
 }
 
-.concentration-how__box {
-  display: flex;
-  flex-direction: column;
-  gap: var(--section-gap);
+.concentration__subtitle {
+  margin-block-end: var(--section-gap);
 }
 
-.text-regular {
+.regular-text {
   font-weight: 400;
 }
 
 .gallery__head {
+  font-size: 18px;
+  font-weight: 700;
   margin-block-end: var(--page-padding);
 }
 
@@ -230,11 +245,12 @@
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-block-size: var(--block-size-footer);
+  block-size: 100vh;
+  min-block-size: 668px;
 }
 
 .footer__title {
+  justify-self: center;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
@@ -245,8 +261,8 @@
   }
   
   .header__theme-menu {
-    align-self: flex-end;
-    margin: calc(192px - var(--page-padding)) 0;
+    justify-self: end;
+    align-self: center;
   }
 
   .header__theme-menu-list {
@@ -254,11 +270,15 @@
   }
 
   .header__text {
-    margin: 163px 0;
     max-inline-size: 364px;
   }
 
-  .concentration-what__box {
+  .concentration {
+    grid-template-columns: 236px 1fr;
+  }
+
+  .concentration_item-cols .concentration__items {
+    display: grid;
     grid-template-columns: 1fr;
   }
 }
@@ -272,8 +292,8 @@
   }
 
   .header__theme-menu {
-    align-self: flex-end;
-    margin: calc(72px - var(--page-padding)) 0 70px;
+    justify-self: end;
+    align-self: center;
   }
 
   .header__theme-menu-list {
@@ -286,18 +306,16 @@
   }
 
   .header__text {
-    margin-block-start: 55px;
     max-inline-size: 100%;
   }
 
-  .concentration-why,
-  .concentration-what__box,
-  .concentration-how {
+  .concentration {
     grid-template-columns: 1fr;
   }
 
-  .concentration-why__box {
-    flex-direction: column;
+  .concentration_item-cols .concentration__items {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .gallery__grid {
