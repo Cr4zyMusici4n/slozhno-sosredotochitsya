@@ -26,6 +26,10 @@
     --accent-color: var(--text-color);
   }
 
+  .concentration__title {
+    color: var(--text-color);
+  }
+
   .section-title,
   .header__theme-menu-list {
     color: var(--text-color);
@@ -55,6 +59,10 @@
   .page:not(.theme_dark) .header__theme-menu-button_active,
   .page:not(.theme_dark) .header__theme-menu-button:focus-visible {
     --accent-color: var(--text-color);
+  }
+
+  .page:not(.theme_dark) .concentration__title {
+    color: var(--text-color);
   }
 
   .page:not(.theme_dark) .section-title,

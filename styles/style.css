@@ -145,6 +145,7 @@
 }
 
 .concentration__title {
+  color: var(--accent-color);
   font-weight: 700;
   font-size: 18px;
 }
@@ -155,6 +156,7 @@
 }
 
 .concentration-item__head {
+  color: var(--text-dark-color);
   margin-block-end: 10px;
 }
 
@@ -192,6 +194,7 @@
 }
 
 .concentration__subtitle {
+  color: var(--text-dark-color);
   margin-block-end: var(--section-gap);
 }
 
