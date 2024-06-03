@@ -2,7 +2,7 @@
 
 .page {
   color: var(--text-color);
-  font-family: var(--font-family), sans-serif;
+  font-family: var(--font-family), sans-serif, monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: var(--line-height);
