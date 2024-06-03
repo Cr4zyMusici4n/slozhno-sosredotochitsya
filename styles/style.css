@@ -1,4 +1,4 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта. */
 
 .page {
   color: var(--text-color);
@@ -81,7 +81,7 @@
 .header__decorated-rec {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
 }
 
 .header__decorated-rec::before {
@@ -145,8 +145,8 @@
 }
 
 .concentration__title {
-  font-size: 18px;
   font-weight: 700;
+  font-size: 18px;
 }
 
 .concentration__items {
@@ -200,9 +200,9 @@
 }
 
 .gallery__head {
-  font-size: 18px;
-  font-weight: 700;
   margin-block-end: var(--page-padding);
+  font-weight: 700;
+  font-size: 18px;
 }
 
 .gallery__grid {
@@ -216,6 +216,7 @@
 }
 
 .gallery__img {
+  display: block;
   object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
@@ -250,7 +251,6 @@
 }
 
 .footer__title {
-  justify-self: center;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 
